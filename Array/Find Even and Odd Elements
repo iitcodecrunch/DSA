@@ -1,0 +1,37 @@
+Question-
+You are given an array of size N containing N integers. you need to print all the even elements in the first line and all odd elements in the second line.
+The array will contain at least one even and one odd element
+
+Input:
+10
+5 2 4 3 1 7 6 9 8 10
+
+Output:
+2 4 6 8 10
+5 3 1 7 9
+
+solution:
+import java.util.*;
+  import java.io.*;
+  
+  public class Main {
+    public static void main(String args[]) throws IOException {
+      
+      Scanner sc = new Scanner(System.in);
+      int size = sc.nextInt();
+      int[] arr = new int[size];
+      for(int i=0;i<size;i++){
+        arr[i]=sc.nextInt();
+        if(arr[i]%2==0){
+          System.out.print(arr[i]+" ");
+        }
+      }
+      System.out.println();
+      for(int i=0;i<size;i++){
+        if(arr[i]%2==1){
+          System.out.print(arr[i]+" ");
+        }
+      }
+      
+    }
+  }
