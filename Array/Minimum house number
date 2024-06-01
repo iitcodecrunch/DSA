@@ -1,0 +1,44 @@
+Minimum house number
+Q- lives in a colony, where N houses are built in a single row numbered from 0 to N−1 The first house has a house number 0, the second house has a house number 1 and so on, every house pays some rent at the end of the month.
+Find out the house number of the house paying the minimum rent.
+
+Note: All house rents are unique
+
+Input:
+1
+5
+4 3 5 2 1
+
+Output:
+4
+
+
+solution:
+import java.util.*;
+  import java.io.*;
+  
+  public class Main {
+    public static void main(String args[]) throws IOException {
+      
+      Scanner sc = new Scanner(System.in);
+      int t = sc.nextInt();
+      while(t--!=0){
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+        
+        for(int i=0;i<size;i++){
+          arr[i]=sc.nextInt();
+        }
+        int min=arr[0];
+        int idx=0;
+        for(int i=0;i<size;i++){
+          if(min>arr[i]){
+            min=arr[i];
+            idx=i;
+          }
+        }
+        System.out.println(idx);
+      }
+      
+    }
+  }
