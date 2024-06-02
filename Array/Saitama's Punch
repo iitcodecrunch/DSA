@@ -1,0 +1,53 @@
+Question:-
+In a far distant world, there is a hero named Saitama and with just one punch he can paralyze his enemies for a certain period.
+Saitama is fighting Garou and is hitting him at certain points in time represented by a sorted array. After each punch, Garou is
+paralyzed for a certain duration of time represented by an integer. Your task is to find the total duration of time Garou will be in a paralyzed state. 
+
+
+Input:
+2 (testCases)
+3 2 (size and K)
+1 4 6 (array)
+3 2 (size and K)
+1 2 6 (array)
+
+Output:
+6
+5
+
+Solution:
+import java.util.*;
+  import java.io.*;
+  
+  public class Main {
+    public static void main(String args[]) throws IOException {
+      
+      //write your code here
+      Scanner sc = new Scanner(System.in);
+      int t = sc.nextInt();
+      while(t--!=0){
+        int size = sc.nextInt();
+        int[] arr = new int[size];
+        int k = sc.nextInt();
+        for(int i=0;i<size;i++){
+          arr[i]=sc.nextInt();
+        }
+        int sum=0;
+        int next=0;
+        for(int i=0;i<size;i++){
+          if(next>=arr[i]){
+            int temp = arr[i]-next+k-1;
+            next+=temp;
+            sum+=temp;
+            
+          }else{
+            sum+=k;
+            next=arr[i]+k-1;
+          }
+          
+        }
+        System.out.println(sum);
+      }
+      
+    }
+  }
